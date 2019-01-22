@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXComboBox?>
+<?import com.jfoenix.controls.JFXDatePicker?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.paint.RadialGradient?>
+<?import javafx.scene.paint.Stop?>
+<?import javafx.scene.shape.Circle?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="root" prefHeight="607.0" prefWidth="630.0" style="-fx-background-color: ffffff;" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.fx.controller.PlaceOrderFormController">
+   <children>
+      <Label alignment="CENTER" layoutX="37.0" prefHeight="47.0" prefWidth="528.0" style="-fx-background-color: #0e377a;" text="Place Order" textFill="WHITE">
+         <font>
+            <Font name="Baskerville Old Face" size="40.0" />
+         </font>
+      </Label>
+      <JFXTextField fx:id="txtOrderID" labelFloat="true" layoutX="42.0" layoutY="64.0" prefHeight="25.0" prefWidth="154.0" promptText="Order ID" />
+      <JFXTextField fx:id="txtTableID" labelFloat="true" layoutX="37.0" layoutY="128.0" prefHeight="25.0" prefWidth="253.0" promptText="Enter Table ID" />
+      <JFXComboBox fx:id="cmbDining" labelFloat="true" layoutX="214.0" layoutY="64.0" prefHeight="25.0" prefWidth="165.0" promptText="Dining Type" />
+      <JFXDatePicker fx:id="dtpDate" layoutX="399.0" layoutY="63.0" prefHeight="28.0" prefWidth="185.0" />
+      <JFXTextField fx:id="txtWaiterID" labelFloat="true" layoutX="313.0" layoutY="128.0" prefHeight="25.0" prefWidth="253.0" promptText="Waiter ID" />
+      <Separator layoutX="21.0" layoutY="179.0" prefHeight="3.0" prefWidth="584.0" />
+      <Separator layoutX="208.0" layoutY="285.0" prefHeight="3.0" prefWidth="391.0" />
+      <JFXTextField fx:id="txtItemCode" labelFloat="true" layoutX="37.0" layoutY="188.0" onAction="#getItemDetails" prefHeight="25.0" prefWidth="253.0" promptText="Item Code" />
+      <JFXTextField fx:id="txtDescription" labelFloat="true" layoutX="313.0" layoutY="188.0" prefHeight="25.0" prefWidth="253.0" promptText="Description" />
+      <JFXTextField fx:id="txtUnitPrice" labelFloat="true" layoutX="313.0" layoutY="229.0" prefHeight="25.0" prefWidth="253.0" promptText="Unit Price" />
+      <JFXTextField fx:id="txtQty" labelFloat="true" layoutX="37.0" layoutY="229.0" prefHeight="25.0" prefWidth="253.0" promptText="Quantity" />
+      <TableView fx:id="tblOrderDetail" layoutX="28.0" layoutY="320.0" prefHeight="200.0" prefWidth="597.0">
+        <columns>
+          <TableColumn prefWidth="116.0" text="Item Code" />
+          <TableColumn prefWidth="144.0" text="Description" />
+            <TableColumn prefWidth="89.0" text="Qty." />
+            <TableColumn prefWidth="116.0" text="Unit Price" />
+            <TableColumn prefWidth="130.0" text="Total" />
+        </columns>
+      </TableView>
+      <JFXButton fx:id="btnAdd" layoutX="37.0" layoutY="270.0" onAction="#add_OnAction" prefHeight="25.0" prefWidth="66.0" style="-fx-background-color: yellow;" text="Add" textFill="#76d798" />
+      <JFXButton fx:id="btnRemove" layoutX="128.0" layoutY="270.0" onAction="#remove_OnAction" prefHeight="25.0" prefWidth="66.0" style="-fx-background-color: yellow;" text="Remove" textFill="#76d798" />
+      <JFXButton fx:id="btnPlaceOrder" layoutX="480.0" layoutY="544.0" onAction="#placeOrder_OnAction" onMouseClicked="#navigateToPayment" prefHeight="38.0" prefWidth="83.0" style="-fx-background-color: yellow;" text="Place Order" textFill="#76d798" />
+      <Label layoutX="42.0" layoutY="541.0" text="Total :">
+         <font>
+            <Font name="System Bold Italic" size="30.0" />
+         </font>
+      </Label>
+      <Label fx:id="lblSubTotal" layoutX="151.0" layoutY="544.0" text="0.0">
+         <font>
+            <Font name="System Bold Italic" size="30.0" />
+         </font>
+      </Label>
+      <VBox layoutX="603.0" layoutY="11.0" prefHeight="73.0" prefWidth="41.0">
+         <children>
+            <Circle onMouseClicked="#navigation" radius="9.0" stroke="BLACK" strokeType="INSIDE">
+               <VBox.margin>
+                  <Insets left="11.0" top="3.0" />
+               </VBox.margin>
+               <fill>
+                  <RadialGradient centerX="0.5" centerY="0.5" radius="0.5">
+                     <stops>
+                        <Stop color="#3dc474" />
+                        <Stop color="#82ff59" offset="1.0" />
+                     </stops>
+                  </RadialGradient>
+               </fill>
+            </Circle>
+            <Circle radius="9.0" stroke="BLACK" strokeType="INSIDE">
+               <VBox.margin>
+                  <Insets left="11.0" top="3.0" />
+               </VBox.margin>
+               <fill>
+                  <RadialGradient centerX="0.5" centerY="0.5" radius="0.5">
+                     <stops>
+                        <Stop color="#c6200a" />
+                        <Stop color="#f159ff" offset="1.0" />
+                     </stops>
+                  </RadialGradient>
+               </fill>
+            </Circle>
+         </children>
+      </VBox>
+   </children>
+</AnchorPane>

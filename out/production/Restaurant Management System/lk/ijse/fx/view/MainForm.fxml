@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.paint.LinearGradient?>
+<?import javafx.scene.paint.Stop?>
+<?import javafx.scene.shape.Circle?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="root" prefHeight="451.0" prefWidth="632.0" style="-fx-background-color: black;" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.fx.controller.MainFormController">
+   <children>
+      <HBox layoutX="12.0" prefHeight="53.0" prefWidth="607.0" style="-fx-background-color: #0e377a;">
+         <children>
+            <Label prefHeight="47.0" prefWidth="198.0" text="Dash Board" textFill="WHITE">
+               <font>
+                  <Font name="Baskerville Old Face" size="40.0" />
+               </font>
+               <HBox.margin>
+                  <Insets left="180.0" />
+               </HBox.margin>
+            </Label>
+            <ImageView fitHeight="51.0" fitWidth="74.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../asset/giphy.gif" />
+               </image>
+            </ImageView>
+         </children>
+      </HBox>
+      <Circle fx:id="crlFood" fill="DODGERBLUE" layoutX="81.0" layoutY="201.0" onMouseClicked="#navigate" onMouseEntered="#playMouseEnterAnimation" onMouseExited="#playMouseExitAnimation" radius="45.0" stroke="BLACK" strokeType="INSIDE" AnchorPane.bottomAnchor="205.0" AnchorPane.topAnchor="156.0" />
+      <Circle fx:id="crlTable" fill="DODGERBLUE" layoutX="321.0" layoutY="201.0" onMouseClicked="#navigate" onMouseEntered="#playMouseEnterAnimation" onMouseExited="#playMouseExitAnimation" radius="45.0" stroke="BLACK" strokeType="INSIDE" AnchorPane.bottomAnchor="205.0" AnchorPane.topAnchor="156.0" />
+      <Circle fx:id="crlPlaceOrder" fill="DODGERBLUE" layoutX="435.0" layoutY="201.0" onMouseClicked="#navigate" onMouseEntered="#playMouseEnterAnimation" onMouseExited="#playMouseExitAnimation" radius="45.0" stroke="BLACK" strokeType="INSIDE" AnchorPane.bottomAnchor="205.0" AnchorPane.topAnchor="156.0" />
+      <Circle fx:id="crlViewOrder" fill="DODGERBLUE" layoutX="549.0" layoutY="201.0" onMouseClicked="#navigate" onMouseEntered="#playMouseEnterAnimation" onMouseExited="#playMouseExitAnimation" radius="45.0" stroke="BLACK" strokeType="INSIDE" AnchorPane.bottomAnchor="205.0" AnchorPane.topAnchor="156.0" />
+      <Circle fx:id="crlEmployee" fill="DODGERBLUE" layoutX="200.0" layoutY="201.0" onMouseClicked="#navigate" onMouseEntered="#playMouseEnterAnimation" onMouseExited="#playMouseExitAnimation" radius="45.0" stroke="#941414" strokeType="INSIDE" AnchorPane.bottomAnchor="205.0" AnchorPane.topAnchor="156.0" />
+      <Separator layoutX="19.0" layoutY="139.0" prefHeight="3.0" prefWidth="585.0" />
+      <Separator layoutX="25.0" layoutY="260.0" prefHeight="3.0" prefWidth="579.0" />
+      <Separator layoutX="137.0" layoutY="128.0" orientation="VERTICAL" prefHeight="143.0" prefWidth="5.0" />
+      <Separator layoutX="257.0" layoutY="130.0" orientation="VERTICAL" prefHeight="143.0" prefWidth="6.0" />
+      <Separator layoutX="374.0" layoutY="130.0" orientation="VERTICAL" prefHeight="143.0" prefWidth="6.0" />
+      <Separator layoutX="490.0" layoutY="130.0" orientation="VERTICAL" prefHeight="143.0" prefWidth="6.0" />
+      <Label fx:id="lblMenu" alignment="CENTER" contentDisplay="CENTER" layoutX="2.0" layoutY="273.0" prefHeight="41.0" prefWidth="621.0" text="Welcome" textAlignment="CENTER">
+         <font>
+            <Font name="Agency FB Bold" size="50.0" />
+         </font>
+         <textFill>
+            <LinearGradient endX="1.0" endY="1.0">
+               <stops>
+                  <Stop color="BLACK" />
+                  <Stop color="WHITE" offset="1.0" />
+               </stops>
+            </LinearGradient>
+         </textFill>
+      </Label>
+      <Label fx:id="lblDescription" alignment="CENTER" contentDisplay="CENTER" layoutX="8.0" layoutY="343.0" prefHeight="17.0" prefWidth="579.0" text="Please select one of above main operations to proceed" textFill="#153632">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>

@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXComboBox?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.paint.RadialGradient?>
+<?import javafx.scene.paint.Stop?>
+<?import javafx.scene.shape.Circle?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.fx.controller.PaymentFormController">
+   <children>
+      <AnchorPane fx:id="root" layoutX="10.0" layoutY="10.0" prefHeight="550.0" prefWidth="647.0" style="-fx-background-color: ffffff;">
+         <children>
+            <JFXTextField fx:id="txtPaymentId" labelFloat="true" layoutX="63.0" layoutY="120.0" prefHeight="25.0" prefWidth="536.0" promptText="Payment ID" AnchorPane.leftAnchor="63.0" />
+            <JFXTextField fx:id="txtOrderId" labelFloat="true" layoutX="63.0" layoutY="161.0" prefHeight="25.0" prefWidth="536.0" promptText="Order ID" AnchorPane.leftAnchor="63.0" />
+            <JFXTextField fx:id="txtTotal" labelFloat="true" layoutX="63.0" layoutY="202.0" prefHeight="25.0" prefWidth="238.0" promptText="Total" AnchorPane.leftAnchor="63.0" />
+            <Label alignment="CENTER" layoutX="63.0" prefHeight="47.0" prefWidth="516.0" style="-fx-background-color: #0e377a;" text="Payments" textFill="WHITE">
+               <font>
+                  <Font name="Baskerville Old Face" size="40.0" />
+               </font>
+            </Label>
+            <JFXButton fx:id="btnAdd" layoutX="38.0" layoutY="81.0" style="-fx-background-color: yellow;" text="Add New" textFill="#76d798" />
+            <Separator layoutX="110.0" layoutY="93.0" prefHeight="3.0" prefWidth="501.0" />
+            <Separator layoutX="46.0" layoutY="111.0" orientation="VERTICAL" prefHeight="150.0" prefWidth="7.0" />
+            <JFXButton fx:id="btnSave" layoutX="38.0" layoutY="275.0" onAction="#save_OnAction" prefHeight="25.0" prefWidth="66.0" style="-fx-background-color: yellow;" text="Save" textFill="#76d798" />
+            <JFXButton fx:id="btnDelete" layoutX="131.0" layoutY="275.0" onAction="#delete_OnAction" prefHeight="25.0" prefWidth="66.0" style="-fx-background-color: yellow;" text="Delete" textFill="#76d798" />
+            <JFXButton layoutX="215.0" layoutY="275.0" prefHeight="25.0" prefWidth="66.0" style="-fx-background-color: yellow;" text="Edit" textFill="#76d798" />
+            <Separator layoutX="301.0" layoutY="286.0" prefHeight="3.0" prefWidth="322.0" />
+            <Separator layoutX="46.0" layoutY="315.0" orientation="VERTICAL" prefHeight="173.0" prefWidth="7.0" />
+            <TableView fx:id="tblPayment" layoutX="56.0" layoutY="315.0" prefHeight="150.0" prefWidth="536.0">
+               <columns>
+                  <TableColumn prefWidth="107.0" text="Payment ID" />
+                  <TableColumn prefWidth="137.0" text="Order ID" />
+                  <TableColumn prefWidth="130.0" text="Payment Method" />
+                  <TableColumn prefWidth="161.0" text="Total" />
+               </columns>
+            </TableView>
+            <JFXComboBox fx:id="cmbMethod" labelFloat="true" layoutX="351.0" layoutY="202.0" prefHeight="25.0" prefWidth="250.0" promptText="Payment Method" />
+            <VBox layoutX="600.0" layoutY="11.0" prefHeight="73.0" prefWidth="41.0">
+               <children>
+                  <Circle fx:id="crlBack" onMouseClicked="#navigation" radius="9.0" stroke="BLACK" strokeType="INSIDE">
+                     <VBox.margin>
+                        <Insets left="11.0" top="3.0" />
+                     </VBox.margin>
+                     <fill>
+                        <RadialGradient centerX="0.5" centerY="0.5" radius="0.5">
+                           <stops>
+                              <Stop color="#3dc474" />
+                              <Stop color="#82ff59" offset="1.0" />
+                           </stops>
+                        </RadialGradient>
+                     </fill>
+                  </Circle>
+                  <Circle fx:id="crlNext" radius="9.0" stroke="BLACK" strokeType="INSIDE">
+                     <VBox.margin>
+                        <Insets left="11.0" top="8.0" />
+                     </VBox.margin>
+                     <fill>
+                        <RadialGradient centerX="0.5" centerY="0.5" radius="0.5">
+                           <stops>
+                              <Stop color="#c6200a" />
+                              <Stop color="#f159ff" offset="1.0" />
+                           </stops>
+                        </RadialGradient>
+                     </fill>
+                  </Circle>
+               </children>
+            </VBox>
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>
